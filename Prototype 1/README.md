@@ -1,30 +1,53 @@
-# Prototype 1 - Horizontal Unity Prototype
-Testing Plan – XR 3D Modeling Tool
-Testing Objective
-Evaluate the impact of the floating toolbar position (left/right/front) on user fluency and comfort.
-Test the naturalness and accuracy of gestures for pushing and pulling modeling blocks in a VR environment.
-Verify whether the fly-view switching function helps users more efficiently inspect large models while reducing nausea.
+#Testing Plan
+Testing plan for interactive prototype 1 – Prototype of an XR 3D Modeling Tool
+This is an XR prototype of a Rhino-like 3D modeling tool.
+Users can free-fly or teleport through the XR environment and use the toolbar to create, select, move, rotate, scale, and delete objects.
+The project's goal is to explore how to make traditional CAD/Rhino push-pull modeling more intuitive and efficient through the immersive operation of XR.
 
-Testing Methodology
-Think-Aloud Protocol: Have participants express their feelings, confusion, and decision-making reasons in real time while using the VR prototype.
-Task-Based Testing: Give users two tasks:
-Use push-and-pull gestures to adjust blocks to a specified size.
-Use fly mode to switch to a bird's-eye view and inspect the model.
+Testing Objectives
+Confirm that users can intuitively understand and operate the Create (Cube/Sphere/Cylinder/Plane) function.
+Verify that users can successfully complete the selection and manipulation (Select + Move/Rotate/Scale/Delete) task flow.
+Observe user comfort and preferences under different camera modes (Free-Fly / Step Teleport).
+Identify points of confusion in the current interaction design to inform subsequent iterations.
 
-Prototype Requirements
-Support basic push-and-pull and zoom-and-zoom operations (gesture interaction).
-The toolbar position should be switchable (at least two positions).
-Provide the ability to switch between fly mode and standard view.
-A simple task prompt interface should be provided to guide users through the test tasks.
+Testing Methodologies
+Think-Aloud Protocol: Participants verbalize their thoughts while performing actions, helping researchers understand their cognitive processes.
+Task-Based Testing: Assign participants one or two specific tasks, such as "create a cube and place it on top of a sphere," and observe their ability to complete them.
+A/B Comparison (optional): Compare the user experience of the Free-Fly and Step Teleport camera modes.
 
-Data Collection and Success Criteria
-Data collected:
-Task completion time (seconds)
-Number of false touches during gestures
-Users' subjective ratings of toolbar location and airplane mode (1–5 points)
-Positive/negative feedback from Think-Aloud
-Success criteria:
-Most users (>70%) were able to complete the task within the allotted time
-False touch rate less than 10%
-Average user rating of toolbar location and airplane mode ≥ 4/5
-No significant interaction issues identified as impeding usability
+Prototype Description & Requirements
+The prototype includes:
+Create Function: Places a cube/sphere/cylinder/plane in the scene, with preview and grid snapping.
+Select Function: Selects an object and highlights it.
+Operation Functions:
+Move (two-step placement and movement, grid snapping)
+Rotate (drag/scroll wheel)
+Scale (drag/scroll wheel, with minimum/maximum constraints)
+Delete (multiple selections highlighted in red, Delete All/Cancel)
+PushPull (placeholder, to be developed)
+Change Material (placeholder, to be developed)
+Camera Control: Free-Fly and Step Teleport modes.
+The prototype meets the following testing objectives:
+Provides sufficient interaction to verify basic modeling workflows.
+Provides camera switching to test spatial awareness and comfort.
+
+Data Collection Method
+Observation & Notes: Records user behavior, hesitation points, and errors during operation.
+Think-Aloud Verbalization: Collect users' intuitive perceptions of the interface and operational thinking.
+Success Rate: Count whether a given task (e.g., "Place the cube on top of the sphere") is completed.
+Time on Task: Record the time it takes to complete each task.
+Subjective Feedback: After the class, ask users about their comfort level, camera mode preferences, etc.
+
+Testing Setup
+The Unity prototype has been run on the computer, ensuring that basic Create/Select/Transform/Delete functions function correctly.
+The camera switch button and toolbar UI are operational.
+Testing Space: Friday Studio Classroom, 5+ participants (classmates/instructors).
+Tools: Timer, observation note sheet, feedback questionnaire (optional).
+
+Testing Process
+Introduction (30 seconds): Briefly explain that this is a 3D modeled XR prototype and ask participants to try to complete the task.
+Familiarization (1 minute): Allow users to freely explore Create and camera movement.
+Task 1 (2 minutes): Create a Cube and move it on top of a Sphere.
+Task 2 (2 minutes): Scale a Cylinder and rotate it to the desired angle.
+Task 3 (optional comparison, 2 minutes): Try performing the same operation in Free-Fly and Step Teleport modes to compare the experience.
+Wrap-up (30 seconds): Gather verbal feedback and overall comments.
