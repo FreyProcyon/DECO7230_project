@@ -1,4 +1,4 @@
-# Assessment 1.1 – DESIGN REPORT: Concept
+# DESIGN REPORT: Concept
 
 Statement of Originality
 This report contains my own original work, except where I have clearly indicated the use of external material.

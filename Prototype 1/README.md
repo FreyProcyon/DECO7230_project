@@ -1,4 +1,4 @@
-#Testing Plan
+# IP1 - Testing Plan
 Testing plan for interactive prototype 1 – Prototype of an XR 3D Modeling Tool
 This is an XR prototype of a Rhino-like 3D modeling tool.
 Users can free-fly or teleport through the XR environment and use the toolbar to create, select, move, rotate, scale, and delete objects.
