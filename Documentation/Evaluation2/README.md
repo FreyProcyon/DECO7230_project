@@ -1,64 +1,66 @@
 # Evaluation 2 Documentation
-Test Plan IP2
-1) Prototype Overview
-Project: Rhino/CAD-style XR 3D modeling tool
-Operating Environment: Meta Quest (Interaction SDK / Building Blocks)
-Interaction Method:
-Locomotion: Official Teleport (ground-based Teleport Area)
-UI: Poke tappable UI + Quick Actions (not using controller rays)
-Modeling Functionality: Create (Cube/Sphere/Cylinder/Plane), Select, Move, Rotate, Scale, Delete (Change Material / PushPull are placeholders)
+Design Evaluation Report
+1) Prototype context — Overview
+This is an XR 3D-modeling prototype for Meta Quest. The goal is to let people quickly build simple shapes in VR and arrange them like in Rhino/SketchUp, but with hands/controllers. You can teleport to move around, poke big world-space buttons to open tools, and then create basic shapes (cube/sphere/cylinder/plane). Each shape shows a live preview that snaps to a grid and can stack on top of other objects. After creating, you can select an object and move / rotate / scale it. Unwanted objects can be marked in red and deleted with a top bar. Two editing features (Push/Pull and Change Material) are planned but not finished yet.
+________________________________________
+2) Objectives & Validation metrics
+•	Task success:
+o	T1 (Create → Stack → Scale) and T2 (Select → Rotate/Move → Delete) ≥ 80% participants complete; each task ≤ 60s.
+•	Discoverability: ≥ 70% can find and use Quick Actions / top Delete bar without hints.
+•	Subjective ratings (5-point): Poke UI usability ≥ 3.5/5; Teleport comfort ≥ 3.5/5.
+________________________________________
+3) Methodology
+•	Participants: 7 (classmates + tutor).
+•	Procedure: Think-Aloud + two time-boxed tasks; screen recording only (no paper notes).
+•	Flow: 30s intro → 1–2min familiarization → T1 & T2 (≤1min each) → 30s verbal feedback + quick ratings.
+•	Setup: Meta Quest; ground Teleport Area; world-space Toolbar + Quick Actions (Poke); XR inputs mapped to controller (trigger/thumbstick).
+________________________________________
+4) Results (factual)
+•	Background (n=7): 3D-modeling experience — None 4 (57.1%), Beginner 2 (28.6%), Advanced 1 (14.3%).
+•	Questionnaire highlights
+o	“I can complete the tasks” (overall): 4.00/5
+o	“Preview & grid snapping help placement/stacking”: 4.29/5
+o	“I could find and use Toolbar/Quick Actions”: 3.43/5 → if we approximate “agree (≥4)” as “no-hint”, about 42.9% met the bar (below the 70% target).
+•	Main verbal feedback
+o	Delete has a bug.
+o	Push/Pull and Change Material are missing/incomplete.
+o	Locomotion feels limited (no vertical fly/ascend).
+o	Red onboarding text looks like an error; buttons are big enough but instruction text is too small.
+Note: Task times and pass/fail counts were not timestamped this round (screen-recording only), so we don’t report per-task timing/ratios here.
+________________________________________
+5) Analysis / Insights
+•	Create flow is strong: Live preview + grid snapping + stack-on-top produced high confidence (4.29/5).
+•	Tool discoverability is the weak link: 3.43/5 average and ~43% “no-hint” indicates labels/visual hierarchy need work (big buttons but small guidance text; red reads as “error”).
+•	Feature completeness matters: Missing Push/Pull and Change Material limits users’ sense of a modeling “loop.”
+•	Mobility needs a vertical option: Only teleport/walk made viewing tall stacks awkward.
+________________________________________
+6) Evaluation of aims (against targets)
+Aim	Outcome	Verdict
+T1/T2 success ≥80%, each ≤60s	Not measured this round (no timestamps)	Undetermined (instrument next round)
+Discoverability ≥70% (no-hint)	≈ 42.9% (from Q)	Not met
+Poke UI usability ≥3.5/5	Supported by overall task rating 4.0/5 & preview help 4.29/5	Met (directionally)
+Teleport comfort ≥3.5/5	Not captured in survey	Add item next round
+________________________________________
+7) Concept iteration (actionable)
+•	Delete flow: finalize XR DeleteTool (state reset, multi-renderer restore, empty-selection handling) and re-test.
+•	Onboarding text: change red → neutral/high-contrast (e.g., white/yellow on dark), font size ≥32–36 pt, 10–15s auto-fade; keep a wrist-hint to recall.
+•	Visual hierarchy: keep large buttons but add short labels (“Create / Select / Move / Rotate / Scale / Delete”); make the top Delete bar clearly labeled (“Delete selected”) and animate in.
+Feature MVPs (next)
+•	Push/Pull: axis-locked extrusion with grid steps; simple gizmo or numeric tag.
+•	Change Material: 3–4 swatches (solid colors/wood/metal) in world-space palette; tap to apply.
+•	Vertical mobility: add vertical step up/down or floor anchors on top of Teleport.
+________________________________________
+8) Reflection & next steps
+•	What worked: Task framing + preview/snapping improved placement confidence; Poke UI broadly usable once discovered.
+•	Limitations: Small N; no per-task timing/finish rates; Teleport comfort not surveyed.
+•	Next steps:
+1.	Ship the fixes (Delete + onboarding text/labels) and re-test with timestamps for T1/T2 time & success.
+2.	Add Push/Pull, Change Material, and vertical step.
+3.	Extend the survey with a Teleport comfort (1–5) item and a one-line discoverability check.
+________________________________________
 
-2) Test Objectives
-Evaluate whether users can intuitively understand and complete the basic modeling process:
-Create objects and stack them (align with top surfaces)
-Select → Move/Rotate/Scale → Delete operations
-Evaluate the discoverability and usability of the Poke UI + Quick Actions
-Verify whether spatial positioning in Teleport affects task completion (not a comparison, only to confirm usability)
 
-3) Validation Metrics
-Task Completion Rate: ≥ 80% of participants completed both tasks as required.
-Time thresholds:
-Task 1 (Create + Stack + Scale): ≤ 60 seconds
-Task 2 (Transform + Delete): ≤ 60 seconds
-Discoverability: ≥ 70% of participants were able to find and use the Quick Actions/top Delete panel without verbal prompts.
-Subjective ratings (5-point scale, collected verbally):
-Poke UI Usability ≥ 3.5/5
-Teleport Comfort ≥ 3.5/5
-
-4) Methodology
-Think-Aloud (Thinking while performing)
-Task-Based (Two clear tasks, timed)
-Light subjective feedback (2–3 verbal sentences + 1–2 5-point ratings after the test)
-
-5) Data Collection (Screen Recording Only)
-Screen Recording: Record the entire process (including hand/controller pointing, UI) using a Quest/PC screen recorder (or a mobile phone screen capture). (Operation)
-Timestamps: Record the start/end time of the task when reviewing the screen recording (no need for pen and paper, just write directly on the video timeline)
-Verbal Key Points: Within 30 seconds after the test, have the participant provide 2–3 sentences of overall experience and two 5-point ratings (oralized for on-screen/audio integration)
-
-6) Test Setup
-Scene Includes:
-Teleport Area Floor (teleportable)
-Toolbar (World Space) + Quick Actions (Poke)
-Create/Select/Transform/Delete (XR integrated (Trigger/Thumbstick)
-Device: MetaQuest + controller; screen recording solution ready
-Participants: Classmates/instructor, target approximately 5 people (can vary slightly)
-
-7) Test Process (total ~5 minutes/person)
-Instruction (30 seconds)
-"This is an XR 3D modeled prototype. You can use Teleport to move around and use your right hand to poke." UI. Please discuss your thoughts as you work.
-Familiarization (1–2 minutes)
-Free experimentation with Teleport, Poke UI, and Create is permitted.
-Task 1 (≤ 1 minute)
-Requirements: Create 2–3 objects → Stack one on top of another (top-to-top) → Resize using the thumbstick
-Records: Completed/Incomplete; Duration; Whether Create and Zoom are found without prompts
-
-Task 2 (≤ 1 minute)
-Requirements: Select a Cube → Rotate (any corner) → Move to another location → Delete via the top panel
-Records: Completed/Incomplete; Duration; Whether Delete is found without prompts
-Verbal 2–3 statements of overall experience
-Rating (5-point scale): Poke UI usability, Teleport comfort (oral recording in video)
-
-8) Success (Pass/Fail)
-The vast majority (≥ 80%) of participants completed both tasks within the time threshold.
-The majority (≥ 70%) of participants were able to find the Quick Query function without prompts. Actions/Delete
-Subjective scoring meets threshold (see above)
+9) Appendix:
+https://github.com/FreyProcyon/DECO7230_project
+https://docs.google.com/forms/d/e/1FAIpQLSc07LO-PD9fvtpuXjwgB44Dn8FKF9_c5TrtGdLZj7ukarQNaA/viewform?usp=dialog
+ 
