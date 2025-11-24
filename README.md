@@ -7,7 +7,8 @@
 **一个基于 Unity 与 Meta Quest 3 的沉浸式 Rhino/CAD 风格建模工具，旨在模拟远程操控月球 3D 打印 rover 进行建造。**
 
 ---
-微信图片_20251124203543.png
+
+<script src=""></script>
 
 
 ## 🎯 项目概述
