@@ -21,6 +21,7 @@
 - **完整对象编辑**：实现物体的 **选择、移动、旋转、缩放与删除**。
 
  <img src="./微信图片_20251124203650.png" alt="项目VR界面演示" width="600"/>
+
 - **材质系统**：新增 `Change Material` 功能，切换不同视觉质感（光泽、金属、粗糙），确保用户感知为 **材质变化** 而非单纯换色。
 - **直觉化VR交互**：采用 **Poke交互** 与 **Quick Actions UI**，配合 **官方Teleport** 方案进行空间移动。
 
@@ -29,6 +30,9 @@
 - **开发平台**：Unity Engine, Meta Interaction SDK & Building Blocks
 - **核心交互**：手部追踪，Poke交互式UI，物体变换控制（Transform）
 - **渲染与视觉**：URP/HDRP渲染管线，动态材质切换（Material Property Block）
+
+ <img src="./微信截图_20251124203609.png" alt="项目VR界面演示" width="600"/>
+
 - **移动方案**：定制化Meta官方Teleport组件
 
 ## 📊 用户测试与迭代
